@@ -1,10 +1,11 @@
+import { Header } from "../../components/Header/Header";
 import PsychologistsList from "../../components/PsychologistsList/PsychologistsList";
 
-const ListPage = () => {
+export const PsychologistsPage = () => {
   return (
     <>
+      <Header />
       <PsychologistsList />
     </>
   );
 };
-export default ListPage;

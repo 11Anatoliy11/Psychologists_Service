@@ -38,7 +38,7 @@ export const Text = styled.p`
 `;
 
 export const ItalicTitle = styled.span`
-  color: #3470ff;
+  color: #36A379;
   font-family: Inter;
   font-size: 60px;
   font-style: italic;
@@ -114,7 +114,7 @@ export const SvgQuestion = styled.svg`
 `;
 export const DivQuestion = styled.div`
   border-radius: 10px;
-  background: #54be96;
+  background: #4535AF;
   width: 40px;
   height: 40px;
   transform: rotate(-15deg);
@@ -128,8 +128,8 @@ export const DivQuestion = styled.div`
 export const SvgCheck = styled.svg`
   width: 30px;
   height: 30px;
-  stroke: #3470ff;
-  fill: #3470ff;
+  stroke: #36A379;
+  fill: #36A379;
 `;
 export const DivCheck = styled.div`
   border-radius: 13px;
@@ -149,7 +149,7 @@ export const DivCheckCard = styled.div`
   width: 240px;
   height: 70px;
   border-radius: 20px;
-  background: #3470ff;
+  background: #36A379;
   top: 260px;
   left: -40px;
   padding-left: 32px;
@@ -220,7 +220,7 @@ export const DivUsers = styled.div`
 
 export const SubmitButton = styled.button`
   border-radius: 30px;
-  background: #3470ff;
+  background: #36A379;
   display: flex;
   padding: 18px 50px;
   justify-content: center;
@@ -237,7 +237,7 @@ export const SubmitButton = styled.button`
   letter-spacing: -0.2px;
   &:hover,
   &:focus {
-    background: rgba(52, 112, 255, 0.7);
+    background: rgba(84, 190, 150, 1);
     transition: all 250ms linear;
   }
   @media screen and (min-width: 1440px) {

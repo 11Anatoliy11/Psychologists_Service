@@ -1,43 +1,63 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useSelector } from "react-redux";
+import { Route, Routes } from "react-router-dom";
+
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import HomePage from "./pages/HomePage/HomePage";
-import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
+
+import Loader from "./components/Loader/Loader";
+import NotFound from "./components/PageNotFound/NotFound";
+import Layout from "./pages/Layout/Layout";
+
+import { selectIsRefreshing } from "./redux/auth/authSelectors";
+
+import { PublicRoute } from "./PublicRoute";
+import { PrivateRoute } from "./PrivateRoute";
+import { PsychologistsPage } from "./pages/PsychologistsPage/PsychologistsPage";
+import FavoritesPage from "./pages/FavoritesPage/FavoritesPage";
 
 function App() {
-  // const [count, setCount] = useState(0)
+
+  const isRefreshing = useSelector(selectIsRefreshing);
 
   return (
     <>
-      <Router>
-        <Routes>
-          <Route index element={<HomePage />} />
-        </Routes>
-      </Router>
+      {isRefreshing ? (
+        <Loader />
+      ) : (
+        <>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<HomePage />} />
+              <Route
+                path="/psychologists"
+                element={<PublicRoute>{<PsychologistsPage />}</PublicRoute>}
+              />
+              <Route
+                path="/favorites"
+                element={<PrivateRoute>{<FavoritesPage />}</PrivateRoute>}
+              />
+            </Route>
 
-      {/* <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p> */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </>
+      )}
+      <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -19,13 +19,13 @@ import {
     TextDiv,
     SubmitButton,
 } from "./Home.styled";
-import icon from "../images/symbol-defs.svg";
+import icon from "../../images/symbol-defs.svg";
 import { useNavigate } from "react-router-dom";
 
-import welcome1x from "../images/welcome1x.jpg";
-import welcome2x from "../images/welcome2x.jpg";
-import welcome1xWebp from "../images/welcome1xwebp.webp";
-import welcome2xWebp from "../images/welcome2xwebp.webp";
+import welcome1x from "../../images/welcome1x.jpg";
+import welcome2x from "../../images/welcome2x.jpg";
+import welcome1xWebp from "../../images/welcome1xwebp.webp";
+import welcome2xWebp from "../../images/welcome2xwebp.webp";
 
 function Home() {
     const navigate = useNavigate();
