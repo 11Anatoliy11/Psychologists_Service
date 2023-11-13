@@ -31,11 +31,11 @@ function App() {
             <Route path="/" element={<Layout />}>
               <Route index element={<HomePage />} />
               <Route
-                path="/psychologists"
+                path="psychologists"
                 element={<PublicRoute>{<PsychologistsPage />}</PublicRoute>}
               />
               <Route
-                path="/favorites"
+                path="favorites"
                 element={<PrivateRoute>{<FavoritesPage />}</PrivateRoute>}
               />
             </Route>
