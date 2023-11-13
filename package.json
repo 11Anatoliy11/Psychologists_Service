@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://11anatoliy11.github.io/Psychologists_Service/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
